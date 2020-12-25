@@ -6,6 +6,7 @@ let user_answer = document.getElementById("userguess");
 let submit =  document.getElementById("submitguess");
 let result =  document.getElementById("guess-result");
 let attempts =  document.getElementById("attempts");
+let no_attempts =  document.getElementById("attempts1");
 let user_guesses = document.getElementById("prev_guess");
 let messages = document.getElementById("message");
 
@@ -20,28 +21,35 @@ const submitAnswer = () =>{
     submit.addEventListener('click', function(e){
         e.preventDefault();
         guess = parseInt(user_answer.value)
+      
         validateGuess(guess);
     });
+
+    document.getElementById("guess-result").style.display = "block"; 
+
+    prev_guesses.push(parseInt(user_answer.value))
+    console.log(prev_guesses)
+
+    guess = " "
+    guesscount++
+    attempts.innerHTML = `${10 - guesscount}`
+    no_attempts.innerHTML = `${10 - guesscount}`
+    user_guesses.innerHTML = `${prev_guesses}`
+    checkGuess()
+    document.getElementById("message").style.display = "block"; 
 }
-   
 
 const validateGuess = (guess)=>{
-    console.log(guess)
 
     if(guess <= 1 || guess >= 100){
         alert("Guess a number between 1 - 100")
     }
     else{
-        checkGuess()
-        prev_guesses.push(guess)
-        console.log(prev_guesses)
-        if(guesscount > 10){
-            showGuesses(guess)
+        if(guesscount === 10){
             showMessage(`GameOver! The Guess Number was ${random}`)
             endGame()
         }
         else{
-            showGuesses(guess)
             checkGuess();
         }
     }
@@ -61,22 +69,29 @@ const checkGuess=()=>{
 }
 
 const showMessage = (message) => {
-    guess = " "
+    guess = ''
     messages.innerHTML = `${message}`
-    
-  
-}
-
-const showGuesses = (guess) => {
-    guess = " "
-   // user_guesses.innerHTML += `${guess}`
-    guesscount++
-    attempts.innerHTML = `${10 - guesscount}`
-   
 }
 
 const endGame = () => {
     guess = "";
+    submit.disabled = true;
     document.getElementById("newgame").style.display = "block"; 
+}
+
+const newGame = () => {
+    document.getElementById("newgame").style.display = "none"; 
+    document.getElementById("guess-result").style.display = "none"; 
+    document.getElementById("message").style.display = "none"; 
+    submit.disabled = false;
+    guesscount = 0
+    prev_guesses = []
+    checkGuess()
+}
+
+window.onload = function(){
+    document.getElementById("newgame").style.display = "none"; 
+    document.getElementById("guess-result").style.display = "none"; 
+
 }
 

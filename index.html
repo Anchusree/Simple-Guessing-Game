@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing Game</title>
-    
+    <link ref="stylesheet" href="styles.css"/>
 </head>
 <body>
     <div class="container">
@@ -17,18 +17,19 @@
             <form>
                 <input type="number" id="userguess" placeholder=""/>
                 <br/>
-                <button type="button" id="submitguess" onclick="submitAnswer(event)">Submit </button>
+                <button type="button" id="submitguess" onclick="submitAnswer()">Submit </button>
             </form>
 
             <div id="guess-result">
                 <p >Previous Guesses: <span id="prev_guess">0</span></p>
-                <p >Guesses Remaining: <span id="attempts">10</span></p>
+                <p >Guesses Remaining: <span id="attempts1">10</span></p>
             </div>
 
             <div>
                 <span id="message"></span>
             </div>
-            <button id="newgame">Start Game</button>
+            
+            <button id="newgame" onclick="newGame()">Start New Game</button>
 
 
 
