@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing Game</title>
-    <link ref="stylesheet" href="styles.css"/>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -12,29 +12,19 @@
             <h1>Guessing Game</h1>
             <h3>Guess a number between 1 - 100</h3>
             <h3>You have <span id="attempts">10</span> attempts to guess the correct number. Good Luck!!! </h3>
-        </div>
-        <div class="input-content">
-            <form>
-                <input type="number" id="userguess" placeholder=""/>
-                <br/>
+            <form class="forms">
+                <input type="number" id="userguess" class="user_guess" placeholder="Enter number between 1-100" />
                 <button type="button" id="submitguess" onclick="submitAnswer()">Submit </button>
             </form>
 
+        </div>
+        <div class="input-content">
+            <button id="newgame" onclick="newGame()">Start New Game</button>
             <div id="guess-result">
                 <p >Previous Guesses: <span id="prev_guess">0</span></p>
                 <p >Guesses Remaining: <span id="attempts1">10</span></p>
+                <p><span id="message" class="message">Message</span></p>
             </div>
-
-            <div>
-                <span id="message"></span>
-            </div>
-            
-            <button id="newgame" onclick="newGame()">Start New Game</button>
-
-
-
-
-          
         </div>
     </div>
     

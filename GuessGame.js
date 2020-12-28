@@ -18,31 +18,37 @@ let prev_guesses = []
 
 const submitAnswer = () =>{
 
-    submit.addEventListener('click', function(e){
-        e.preventDefault();
-        guess = parseInt(user_answer.value)
+    if(parseInt(user_answer.value) > 0){
+        submit.addEventListener('click', function(e){
+            e.preventDefault();
+            //guess = parseInt(user_answer.value)
+           
+        });
+        validateGuess(user_answer.value);
+        console.log(user_answer.value)
+
+        document.getElementById("guess-result").style.display = "block"; 
+
+
+        prev_guesses.push(parseInt(user_answer.value))
+        console.log(prev_guesses)
+    
       
-        validateGuess(guess);
-    });
-
-    document.getElementById("guess-result").style.display = "block"; 
-
-    prev_guesses.push(parseInt(user_answer.value))
-    console.log(prev_guesses)
-
-    guess = " "
-    guesscount++
-    attempts.innerHTML = `${10 - guesscount}`
-    no_attempts.innerHTML = `${10 - guesscount}`
-    user_guesses.innerHTML = `${prev_guesses}`
-    checkGuess()
-    document.getElementById("message").style.display = "block"; 
+        guesscount++
+        attempts.innerHTML = `${10 - guesscount}`
+        no_attempts.innerHTML = `${10 - guesscount}`
+        user_guesses.innerHTML = `${prev_guesses}`
+        checkGuess(user_answer.value)
+       // document.getElementById("message").style.display = "block"; 
+    }
+   
 }
 
 const validateGuess = (guess)=>{
 
-    if(guess <= 1 || guess >= 100){
+    if(guess < 1 || guess > 100){
         alert("Guess a number between 1 - 100")
+        
     }
     else{
         if(guesscount === 10){
@@ -50,14 +56,16 @@ const validateGuess = (guess)=>{
             endGame()
         }
         else{
-            checkGuess();
+            checkGuess(guess);
         }
     }
+   
+
 }
 
-const checkGuess=()=>{
-    if(random === guess){
-       showMessage("Guessed Correctly")
+const checkGuess=(guess)=>{
+    if(random == guess){
+       showMessage("Guessed Correctly.Congratulations!!!")
        endGame();
     }
     else if(guess > random){
@@ -71,6 +79,18 @@ const checkGuess=()=>{
 const showMessage = (message) => {
     guess = ''
     messages.innerHTML = `${message}`
+
+    if(message === "Guessed Correctly.Congratulations!!!"){
+        messages.style.background = "green" 
+        messages.style.fontSize = "60px"
+    }
+    else if(message === "Its too high, Try Again!"){
+        messages.style.background = "red" 
+    }
+    else{
+        messages.style.background = "red" 
+    }
+
 }
 
 const endGame = () => {

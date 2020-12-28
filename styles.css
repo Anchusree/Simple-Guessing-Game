@@ -1,0 +1,82 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(7, 117, 117);
+}
+
+h1{
+    padding: 20px;
+    text-align: center;
+    font-size: 45px;
+}
+
+.container{
+    text-align: center;
+    justify-content: center;
+
+}
+.content{
+    
+    background: linear-gradient(rgba(204, 208, 204, 0.5), rgba(234, 225, 235, 0.5)),
+    url( "number-guessing-game.jpg") no-repeat;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 60px;
+    font-size:22px;
+    border-radius: 60px;
+
+}
+.user_guess{
+    height: 70px;
+    width: 290px;
+    font-size:larger;
+    border: 3px solid navy
+}
+#submitguess{
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
+    font-family: cursive;
+    border-radius: 15px;
+    background-color:rgb(138, 213, 213);
+    font-size: 30px;
+}
+.forms button{
+    cursor: pointer;
+    color: rgb(7, 15, 103);
+   
+}
+p{
+    color: white;
+    font-size: 40px;
+}
+.guess-result{
+    text-align: center;
+}
+.message{
+    background-color: lightgreen;
+    color:whitesmoke;
+}
+.forms{
+    text-align: center;
+}
+#newgame{
+    cursor: pointer;
+    color: rgb(7, 15, 103);
+    width: 270px;
+    height: 80px;
+    font-size: 18px;
+    font-family: cursive;
+    border-radius: 15px;
+    background-color:rgb(138, 213, 213);
+    font-size: 30px;
+    justify-content: center;
+    margin: 50px;
+}
