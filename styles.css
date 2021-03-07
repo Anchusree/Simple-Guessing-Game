@@ -60,23 +60,24 @@ p{
 .guess-result{
     text-align: center;
 }
+.input-content{
+    text-align: center;
+}
 .message{
-    background-color: lightgreen;
+    background-color: rgb(7, 99, 7);
     color:whitesmoke;
 }
 .forms{
     text-align: center;
 }
 #newgame{
-    cursor: pointer;
-    color: rgb(7, 15, 103);
-    width: 270px;
-    height: 80px;
+    width: 290px;
+    height: 60px;
     font-size: 18px;
     font-family: cursive;
     border-radius: 15px;
     background-color:rgb(138, 213, 213);
     font-size: 30px;
-    justify-content: center;
-    margin: 50px;
+    float: right;
+   
 }

@@ -9,17 +9,18 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Guessing Game</h1>
+            <h1>GUESSING GAME</h1>
             <h3>Guess a number between 1 - 100</h3>
             <h3>You have <span id="attempts">10</span> attempts to guess the correct number. Good Luck!!! </h3>
+           
             <form class="forms">
-                <input type="number" id="userguess" class="user_guess" placeholder="Enter number between 1-100" />
+                <input type="number" id="userguess" class="user_guess" placeholder="Enter number" />
                 <button type="button" id="submitguess" onclick="submitAnswer()">Submit </button>
+                <button type="button" id="newgame" onclick="newGame()">Start New Game</button>
             </form>
-
+           
         </div>
         <div class="input-content">
-            <button id="newgame" onclick="newGame()">Start New Game</button>
             <div id="guess-result">
                 <p >Previous Guesses: <span id="prev_guess">0</span></p>
                 <p >Guesses Remaining: <span id="attempts1">10</span></p>
@@ -29,6 +30,6 @@
     </div>
     
   
-    <script src="GuessGame.js"></script>
+    <script src="Game.js"></script>
 </body>
 </html>
